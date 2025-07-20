@@ -16,7 +16,7 @@ const app = express()
 const server = createServer(app)
 const io = new Server(server, {
   cors: {
-    origin: "https://collaborative-to-do-board-1.onrender.com",
+    origin: "https://collaborative-to-do-board-rose.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
   },
 })
@@ -27,7 +27,7 @@ connectDB()
 // Middleware
 app.use(
   cors({
-    origin: "https://collaborative-to-do-board-1.onrender.com",
+    origin: "https://collaborative-to-do-board-rose.vercel.app",
     credentials: true,
   }),
 )
