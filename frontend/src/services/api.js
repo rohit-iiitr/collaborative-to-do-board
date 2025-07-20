@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://collaborative-to-do-board-jukp.onrender.com/api"
+const API_BASE_URL = "https://collaborative-to-do-board-jukp.onrender.com"
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {
@@ -21,7 +21,7 @@ const handleResponse = async (response) => {
 // Auth API
 export const authAPI = {
   register: async (username, email, password) => {
-    const response = await fetch(`${API_BASE_URL}/auth/register`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, email, password }),
@@ -30,7 +30,7 @@ export const authAPI = {
   },
 
   login: async (email, password) => {
-    const response = await fetch(`${API_BASE_URL}/auth/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -39,7 +39,7 @@ export const authAPI = {
   },
 
   logout: async () => {
-    const response = await fetch(`${API_BASE_URL}/auth/logout`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
       method: "POST",
       headers: getAuthHeaders(),
     })
@@ -47,14 +47,14 @@ export const authAPI = {
   },
 
   getCurrentUser: async () => {
-    const response = await fetch(`${API_BASE_URL}/auth/me`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
       headers: getAuthHeaders(),
     })
     return { data: await handleResponse(response) }
   },
 
   getUsers: async () => {
-    const response = await fetch(`${API_BASE_URL}/auth/users`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/users`, {
       headers: getAuthHeaders(),
     })
     return { data: await handleResponse(response) }
@@ -64,14 +64,14 @@ export const authAPI = {
 // Task API
 export const taskAPI = {
   getTasks: async () => {
-    const response = await fetch(`${API_BASE_URL}/tasks`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks`, {
       headers: getAuthHeaders(),
     })
     return { data: await handleResponse(response) }
   },
 
   createTask: async (taskData) => {
-    const response = await fetch(`${API_BASE_URL}/tasks`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks`, {
       method: "POST",
       headers: getAuthHeaders(),
       body: JSON.stringify(taskData),
@@ -80,7 +80,7 @@ export const taskAPI = {
   },
 
   updateTask: async (taskId, taskData) => {
-    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
       method: "PUT",
       headers: getAuthHeaders(),
       body: JSON.stringify(taskData),
@@ -89,7 +89,7 @@ export const taskAPI = {
   },
 
   deleteTask: async (taskId) => {
-    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}`, {
       method: "DELETE",
       headers: getAuthHeaders(),
     })
@@ -97,7 +97,7 @@ export const taskAPI = {
   },
 
   smartAssign: async (taskId) => {
-    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}/smart-assign`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/smart-assign`, {
       method: "POST",
       headers: getAuthHeaders(),
     })
@@ -105,7 +105,7 @@ export const taskAPI = {
   },
 
   startEdit: async (taskId) => {
-    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}/start-edit`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/start-edit`, {
       method: "POST",
       headers: getAuthHeaders(),
     })
@@ -113,7 +113,7 @@ export const taskAPI = {
   },
 
   endEdit: async (taskId) => {
-    const response = await fetch(`${API_BASE_URL}/tasks/${taskId}/end-edit`, {
+    const response = await fetch(`${API_BASE_URL}/api/tasks/${taskId}/end-edit`, {
       method: "POST",
       headers: getAuthHeaders(),
     })
@@ -121,7 +121,7 @@ export const taskAPI = {
   },
 
   getUsers: async () => {
-    const response = await fetch(`${API_BASE_URL}/auth/users`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/users`, {
       headers: getAuthHeaders(),
     })
     return { data: await handleResponse(response) }
@@ -131,7 +131,7 @@ export const taskAPI = {
 // Action API
 export const actionAPI = {
   getActions: async () => {
-    const response = await fetch(`${API_BASE_URL}/actions`, {
+    const response = await fetch(`${API_BASE_URL}/api/actions`, {
       headers: getAuthHeaders(),
     })
     return { data: await handleResponse(response) }
