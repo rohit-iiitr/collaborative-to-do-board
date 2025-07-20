@@ -23,16 +23,16 @@
   align-items: left;
   gap: 1rem;
 }
-.header-left h1 {
+/* .header-left h1 {
               
              margin-left:-30px;
              /* margin-top: 30px;
-             margin-bottom: 30px; */
+             margin-bottom: 30px; 
             font-size: 3.0rem;
             color: white;
             text-align: center;
             margin-bottom: 10px;
-            /* text-shadow: 0 2px 4px rgba(201, 139, 139, 0.3); */
+            /* text-shadow: 0 2px 4px rgba(201, 139, 139, 0.3); 
             font-weight: 700;
             background: linear-gradient(45deg, #3055d9, #3741a3);
             -webkit-background-clip: text;
@@ -40,7 +40,7 @@
             background-clip: text;
            
         
-}
+} */
 
 .header-right{
 /*   margin-right:-50px */
