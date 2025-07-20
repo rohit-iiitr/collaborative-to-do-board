@@ -22,7 +22,7 @@ const Header = ({
     <header className="header">
       <div className="header-content">
         <div className="header-left">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold text-gray-800 mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Collaborative Todo Board
           </h1>
           {/* <div className="connection-status">
